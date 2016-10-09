@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_horarios"
+            android:icon="@drawable/timetable"
+            android:title="Horários" />
+        <item
+            android:id="@+id/nav_avisos"
+            android:icon="@drawable/alert"
+            android:title="Avisos" />
+        <item
+            android:id="@+id/nav_infos"
+            android:icon="@drawable/info"
+            android:title="Informações" />
+    </group>
+
+    <item android:title="#SeConecte!">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Compartilhar" />
+            <item
+                android:id="@+id/nav_sobre"
+                android:icon="@drawable/bus"
+                android:title="Sobre" />
+        </menu>
+    </item>
+
+</menu>
