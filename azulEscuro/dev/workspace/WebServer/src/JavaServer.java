@@ -56,10 +56,16 @@ final class HttpRequest implements Runnable{
 		}
 	}
 	
-	private void processLogin(String msg){
+	private void processLogin(String msg, GenericMessage userData){
 		String args[] = msg.split("+");
 		String login = args[0];
 		String pass  = args[1];
+		
+		String query = "SELECT password FROM Usuario WHERE login = "+userData.userId;
+		
+		GenericMessage gm = DatabaseAcess.requestQuey(query, RequestType.LOGIN);
+		
+		
 		
 	}
 	

@@ -7,8 +7,7 @@ import java.sql.Statement;
 public class DatabaseAcess implements Runnable {
 	private static Connection connection;
 
-	public static GenericMessage requestQuey(String query, RequestType typeRequest,
-			GenericMessage userData) {
+	public static GenericMessage requestQuey(String query, RequestType typeRequest ) {
 		try {
 			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
