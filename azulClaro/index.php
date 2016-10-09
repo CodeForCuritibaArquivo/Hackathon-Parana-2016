@@ -5,6 +5,10 @@
  * Date: 08/10/2016
  * Time: 19:10
  */
+
+session_start();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +54,7 @@
                         <ul class="list-unstyled media-block">
                             <li class="mar-btm">
                                 <div class="media-left">
-                                    <img src="http://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-sm" alt="Profile Picture">
+                                    <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
                                 </div>
                                 <div class="media-body pad-hor">
                                     <div class="speech">
@@ -78,7 +82,7 @@
                             </li>
                             <li class="mar-btm">
                                 <div class="media-left">
-                                    <img src="http://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-sm" alt="Profile Picture">
+                                    <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
                                 </div>
                                 <div class="media-body pad-hor">
                                     <div class="speech">
@@ -106,7 +110,7 @@
                             </li>
                             <li class="mar-btm">
                                 <div class="media-left">
-                                    <img src="http://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-sm" alt="Profile Picture">
+                                    <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
                                 </div>
                                 <div class="media-body pad-hor">
                                     <div class="speech">
@@ -134,7 +138,7 @@
                             </li>
                             <li class="mar-btm">
                                 <div class="media-left">
-                                    <img src="http://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-sm" alt="Profile Picture">
+                                    <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
                                 </div>
                                 <div class="media-body pad-hor">
                                     <div class="speech">
@@ -150,14 +154,13 @@
                     </div>
                     <div class="nano-pane"><div class="nano-slider" style="height: 141px; transform: translate(0px, 0px);"></div></div></div>
 
-                <!--Widget footer-->
                 <div class="panel-footer">
                     <div class="row">
                         <div class="col-xs-9">
-                            <input type="text" placeholder="Enter your text" class="form-control chat-input">
+                            <input type="text" placeholder="Digite aqui" id="chatInput" class="form-control chat-input">
                         </div>
                         <div class="col-xs-3">
-                            <button class="btn btn-primary btn-block" type="submit">Send</button>
+                            <input type="button" class="btn btn-primary btn-block" value="Enviar" id="btnSend" />
                         </div>
                     </div>
                 </div>
@@ -167,5 +170,9 @@
         </div>
     </div>
 </div>
+
+<script src="js/main.js"></script>
+
+
 </body>
 </html>
