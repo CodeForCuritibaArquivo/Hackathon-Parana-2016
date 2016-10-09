@@ -46,20 +46,53 @@ session_start();
                 <div class="nano has-scrollbar" style="height:380px">
                     <div class="nano-content pad-all" tabindex="0" style="right: -17px;">
                         <ul class="list-unstyled media-block">
-                            <li class="mar-btm">
+                            <li class="mar-btm" id="conv1">
                                 <div class="media-left">
                                     <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
                                 </div>
                                 <div class="media-body pad-hor">
                                     <div class="speech">
-                                            <a href="#" class="media-heading">Caps</a>
-                                        <p>Hey, você por acaso quer internet grátis?</p>
-                                        <p class="speech-time">
-                                            <i class="fa fa-clock-o fa-fw"></i>09:23AM
-                                        </p>
+                                        <p>Hey! Eu sou a Caps! Tudo bem? :3</p>
                                     </div>
                                 </div>
                             </li>
+
+
+                            <li class="mar-btm" id="conv2">
+                                <div class="media-left">
+                                    <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
+                                </div>
+                                <div class="media-body pad-hor">
+                                    <div class="speech">
+                                        <p>Eu vou te ajudar a ter internet grátis! ~dancinha da caps~ </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="mar-btm" id="conv3">
+                                <div class="media-left">
+                                    <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
+                                </div>
+                                <div class="media-body pad-hor">
+                                    <div class="speech">
+                                        <p>Nossa, já falei demais, posso te fazer uma perguntinha?</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="mar-btm" id="conv4">
+                                <div class="media-left">
+                                    <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
+                                </div>
+                                <div class="media-body pad-hor">
+                                    <div class="speech">
+                                        <p>Você deve estar esperando o ônibus, certo? Pra onde cê vai? :3</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <? /*
+
                             <li class="mar-btm">
                                 <div class="media-right">
                                     <img src="http://bootdey.com/img/Content/avatar/avatar2.png" class="img-circle img-sm" alt="Profile Picture">
@@ -143,7 +176,7 @@ session_start();
                                         </p>
                                     </div>
                                 </div>
-                            </li>
+                            </li> */ ?>
                         </ul>
                     </div>
                     <div class="nano-pane"><div class="nano-slider" style="height: 141px; transform: translate(0px, 0px);"></div></div></div>
@@ -167,6 +200,7 @@ session_start();
 </div>
 
 <script src="js/main.js"></script>
+
 
 
 </body>
