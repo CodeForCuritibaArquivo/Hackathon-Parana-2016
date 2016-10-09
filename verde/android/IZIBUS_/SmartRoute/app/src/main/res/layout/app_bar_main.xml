@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.hackhaton.brunolima.smartroute.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:id="@+id/searchView"
+            android:layout_weight="1"
+            android:backgroundTintMode="screen"
+            android:contextClickable="true"
+            android:iconifiedByDefault="false" />
+
+
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:id="@+id/multiple_actions_down"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="top|right"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/colorPrimary"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            fab:fab_addButtonPlusIconColor="#ffffff"
+            fab:fab_addButtonSize="normal"
+            fab:fab_expandDirection="down">
+
+            <TextView
+                android:text="#BusãoLotado!"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:textColor="#DD2C00"
+                android:layout_height="wrap_content"
+
+                />
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                fab:fab_size="normal"
+                app:fab_icon="@drawable/on_03"
+                fab:fab_colorNormal="@color/colorPrimary"
+                fab:fab_colorPressed="@color/colorPrimaryDark"
+                android:scaleType="centerInside"
+                android:id="@+id/bt_busaolotado" />
+
+            <TextView
+                android:text="#TôDePé!"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:textColor="#FF6D00"
+                android:layout_height="wrap_content"/>
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/bt_todepe"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                fab:fab_colorNormal="@color/colorPrimary"
+                fab:fab_colorPressed="@color/colorPrimaryDark"
+                android:scaleType="centerInside"
+                app:fab_icon="@drawable/on_02" />
+
+            <TextView
+                android:text="#TôSentado!"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:textColor="#4CAF50"
+                android:layout_height="wrap_content"/>
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/bt_tosentado"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                fab:fab_colorNormal="@color/colorPrimary"
+                fab:fab_colorPressed="@color/colorPrimaryDark"
+                android:scaleType="centerInside"
+                app:fab_icon="@drawable/on_01" />
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
