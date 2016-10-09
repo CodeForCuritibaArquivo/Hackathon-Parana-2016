@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html data-ng-app="izibus">
+<head>
+	<script 
+		src="./arquivos/angular.min.js"></script>
+	<!-- <script 
+		src="./arquivos/jquery-3.1.1.min.js"></script> -->
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script
+		src="./arquivos/bootstrap.min.js"></script>
+	<link rel="stylesheet"
+		href="./arquivos/bootstrap.min.css">
+	<title>#IziBus</title>
+	<script>
+		$(document).ready(function(){
+			$("#sideMenu").fadeIn(2000);
+			$("#dash").animate({right: '-30%',opacity:'1.0'});
+			$("#accordion").animate({right:'-30%'});
+			$("#dash").animate({right:'-8	0%'});
+			$('[data-toggle="tooltip"]').tooltip(); 	
+		});
+
+
+		angular.module('izibus',[])
+			.controller('TelaController',telaController)
+			function telaController($compile){
+				var vm = this;
+				 
+				 $.ajax({
+								url:'http://hackathonpr2016.mhbs.com.br/linha_geos/listar_todos_nome',
+								headers:{
+								},
+								async:false,
+								type:'POST',
+								dataType:'json',
+								success:function(retorno){
+									//alert(JSON.stringify(retorno));
+									vm.linhas = retorno;
+								
+									},
+								error:function(err){
+									alert(err.mensagem);
+								}
+							});
+		
+				vm.trocaTela = (Menu)=>{
+				
+					switch(Menu){
+						case 1://Pesquisar
+								$("#Notificacoes").fadeOut();
+								$("#accordion").fadeIn(200);
+								$("#dash").animate({right:'10%'});
+
+							break;
+						case 2://HOME
+								$("#dash").fadeOut();
+								$("#accordion").fadeOut();
+								$("#accordion").animate({right:'-30%'});
+								$("#dash").animate({right:'-80%'});
+								//$("#Notificacoes").fadeIn();
+							break;
+						case 3://Dash
+						$("#dash").fadeIn(200);
+								$("#Notificacoes").fadeOut();
+								$("#dash").html(vm.DashBoard);
+
+								$("#dash").animate({left:'10%'});
+									//angular.element(document.getElementById('sideMenu')).append(temp);
+								//$("#dash").html(vm.Home);
+							break;
+					}
+				};
+				vm.menuAtual = vm.Home;
+  				vm.DashBoard = '<img src="./imagens/dash.png" height="400" width="600" style="float:left;margin-top:30px;" id="grafico"><p style="margin-top: 80px;"><br><br><img src="./icones/png/glyphicons-223-share.png"><br><br><img src="./icones/png/glyphicons-41-stats.png"><br><br><img src="./icones/png/glyphicons-193-remove-sign.png"><br><br><img src="./icones/png/glyphicons-28-search.png"></p>';
+  				vm.Home = '<h1>HOME!</h1>';
+						
+			}
+	</script>
+<style>
+		body{
+			background-image:url('./imagens/background.jpeg'); 
+			background-repeat: no-repeat;
+			background-attachment: fixed; 
+			background-color: #77d5a6;
+			background-attachment: fixed;
+			background-size: 1520px 710px;
+		}
+
+		li{
+			margin:5px;
+			border-radius: 25px 25px 25px 25px;
+		}
+		li:last-child{
+			margin:5px;
+			border-radius: 25px 25px 25px 25px;
+		}
+		
+		#sideMenu{
+			position: fixed;	
+			margin-left:10px; 
+			float:left;
+			height:100%;
+			width:265px; 
+			display: none;
+			padding-top: 0px;						
+			padding-left:0px;
+			padding-right:0px;
+			padding-bottom:0px;
+		}
+		#dash{
+			
+			overflow: auto;
+			float:right; 
+			height:100%;
+			width:90%; 
+		}
+		.tey{
+			background-color: #86d690;
+			color:white;
+			padding: 10px;
+			border:0px;
+			text-align: center;
+		}	
+		#sublinhado{
+			position: fixed;
+			margin-top:98px; 
+			height: 520px;
+			width: 100%;
+		}
+		.botao{
+			margin: 5px;
+			text-align: center;
+			border-radius: 10px;
+			height: 35px; 
+			width:160px ; 
+			border:0px;
+			background-color: #86d690;
+		}
+		.botao:hover{
+			cursor:pointer;
+			background-color: #77b5a6;
+		}
+		#header{
+			padding-top: 0px; 
+			height: 100px;
+			padding-top: 0px; height: 100px;
+			background-position: center;
+		}
+		#grafico{
+			cursor:pointer;
+		}
+	</style>
+</head>
+<body>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Meu Perfil</h4>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:40px;">
+        	<div style="float:right; height:180px; width: 160px;">
+        	<p align="center">Imagem de perfil:</p>
+
+        	<img src="./imagens/smart-route.jpg" height="150" width="158" style="border-radius:5px;">
+        	<input type="file" name="foto" style="color: transparent;margin-left:20px;margin-bottom:0px; padding-top:10px; ">
+        	</div>
+        	Nome: <input type="text" name="" readonly="readonly" class="form form-control" value="Filipe Kertcher" style="width:200px;">
+        	<br>
+        	Nível: <input type="Number" name="" readonly="readonly" value="10" class="form form-control" style="width:200px;">
+        	<br>
+        	Órgão de controle : <select class="form form-control" style="width:200px;">
+        		<option>COMEC</option>
+        		<option>DETRAN</option>
+        		<option>POLÍCIA MILITAR</option>
+        		<option>CELEPAR</option>
+        		</select>
+        	<br>
+        	<h2 style="font-size:20px">Compartilhamento de dados:</h2>
+        		Ativado		<input type="checkbox" name="AllowData">
+        	<br>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-danger" href="./index.html" style="width:80px;">Sair</a><button type="button" class="btn btn-success" data-dismiss="modal" style="width:80px; background-color: #77b5a6;" >Fechar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="row" style="width:1532px; position: fixed;" data-ng-controller="TelaController as Tela">
+
+	<div id="sublinhado">
+  		<div class=" col-sm-4" id="sideMenu" >
+  			<div id="header"  title="Clique aqui para visualizar seu perfil!" >
+  				<p align="center"><img src="./imagens/header.png" height="100" width="150"></p>
+  			</div>
+  			<ul class="list-group" style="width:100%; padding-left:45px;">
+  				<button class ="btn btn-success botao"  data-ng-click="Tela.trocaTela(2)" id="Home">Home</button>
+  				<br>
+  				<button class ="btn btn-success botao"  data-ng-click="Tela.trocaTela(1)" id="Pesquisar">Pesquisar</button>
+  				<br>
+  				<button class ="btn btn-success botao" data-ng-click="Tela.trocaTela(3)" id="Dash">Dashboard</button>	
+  				<br>
+  				<button class ="btn btn-success botao" id="Dash" data-toggle="modal" data-target="#myModal">Perfil</button>
+			</ul>
+		</div> 
+  		<div  class=" col-sm-8" id="dash" data-ng-init="Tela.trocaTela('Home')">
+  		
+  		<div id="Notificacoes" style="display: none; background-color: #383838; height: 500px;">
+			<ul class="list-group">
+				<li class="list-group-item"></li>
+			</ul>
+		</div>
+	  		<div class="panel-group" id="accordion" style="display:none;width:1000px;float:right;">
+	  			<br>
+	  			<input type="text" data-ng-model="filtraLinha" class="form form-control" style="width:200px;" placeholder="Digite um filtro...">
+	  			<br>
+	  			<div class="panel panel-default" data-ng-repeat="j in Tela.linhas |filter : filtraLinha" >
+	   			 <div class="panel-heading">
+	    		 <h4 class="panel-title">
+				        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{j.id}}" >{{j.linha}}</a>
+				      </h4>
+				    </div>
+				    <div id="collapse{{j.id}}" class="panel-collapse collapse ">
+				      <div class="panel-body">
+				      	<table class="table table-hover" style="text-align: center;">
+				      		<thead>
+				      			<th style="text-align: center;">Latitude</th>
+				      			<th style="text-align: center;">Longitude</th>
+				      			<th style="text-align: center;">Informação</th>
+				      		</thead>
+				      		<tbody>
+				      			<tr ng-repeat="linha in Tela.linhas">
+				      				<td >{{linha.latitude}}</td>
+				      				<td >{{linha.longitude}}</td>
+				      				<td >{{linha.informacao}}</td>
+				      			</tr>
+				      		</tbody>
+				      	</table>
+				      </div>
+				    </div>
+				  </div>
+	  		</div>
+		</div>
+</div>
+</div>
+</body>
+</html>
