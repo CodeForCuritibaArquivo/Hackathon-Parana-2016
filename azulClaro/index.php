@@ -5,6 +5,10 @@
  * Date: 08/10/2016
  * Time: 19:10
  */
+
+session_start();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +17,7 @@
         <meta http-equiv="content-type" content="text/html">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-COMPATIBLE" content="IE-edge">
-        <meta name="viewport" content="widht=device-width, initial-scale-1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Caps!</title>
 
@@ -25,21 +29,15 @@
     </head>
 <body>
 <div class="container">
-    <div class="col-md-12 col-lg-6">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
         <div class="panel">
             <div class="panel-heading">
                 <div class="panel-control">
                     <div class="btn-group">
                         <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#demo-cha-body"><i class="fa fa-chevron-down"></i></button>
                         <button type="button" class="btn btn-default" data-toggle="dropdown"><i class="fa fa-gear"></i></button>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a href="#">Disponivel</a> </li>
-                            <li><a href="#">Disponivel</a> </li>
-                            <li><a href="#">Disponivel</a> </li>
-                            <li class="divider"></li>
-                            <li><a id="demo-connect-chat" href="#" class="disabled-link" data-target="#demo-chat-body">Conectar</a> </li>
-                            <li><a id="demo-disconnect-chat" href="#" data-target="#demo-chat-body">Desconectar</a> </li>
-                        </ul>
+
                     </div>
                 </div>
                 <h3 class="panel-title">Caps</h3>
@@ -48,20 +46,53 @@
                 <div class="nano has-scrollbar" style="height:380px">
                     <div class="nano-content pad-all" tabindex="0" style="right: -17px;">
                         <ul class="list-unstyled media-block">
-                            <li class="mar-btm">
+                            <li class="mar-btm" id="conv1">
                                 <div class="media-left">
-                                    <img src="http://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-sm" alt="Profile Picture">
+                                    <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
                                 </div>
                                 <div class="media-body pad-hor">
                                     <div class="speech">
-                                            <a href="#" class="media-heading">Caps</a>
-                                        <p>Hey, você por acaso quer internet grátis?</p>
-                                        <p class="speech-time">
-                                            <i class="fa fa-clock-o fa-fw"></i>09:23AM
-                                        </p>
+                                        <p>Hey! Eu sou a Caps! Tudo bem? :3</p>
                                     </div>
                                 </div>
                             </li>
+
+
+                            <li class="mar-btm" id="conv2">
+                                <div class="media-left">
+                                    <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
+                                </div>
+                                <div class="media-body pad-hor">
+                                    <div class="speech">
+                                        <p>Eu vou te ajudar a ter internet grátis! ~dancinha da caps~ </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="mar-btm" id="conv3">
+                                <div class="media-left">
+                                    <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
+                                </div>
+                                <div class="media-body pad-hor">
+                                    <div class="speech">
+                                        <p>Nossa, já falei demais, posso te fazer uma perguntinha?</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="mar-btm" id="conv4">
+                                <div class="media-left">
+                                    <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
+                                </div>
+                                <div class="media-body pad-hor">
+                                    <div class="speech">
+                                        <p>Você deve estar esperando o ônibus, certo? Pra onde cê vai? :3</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <? /*
+
                             <li class="mar-btm">
                                 <div class="media-right">
                                     <img src="http://bootdey.com/img/Content/avatar/avatar2.png" class="img-circle img-sm" alt="Profile Picture">
@@ -78,7 +109,7 @@
                             </li>
                             <li class="mar-btm">
                                 <div class="media-left">
-                                    <img src="http://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-sm" alt="Profile Picture">
+                                    <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
                                 </div>
                                 <div class="media-body pad-hor">
                                     <div class="speech">
@@ -106,7 +137,7 @@
                             </li>
                             <li class="mar-btm">
                                 <div class="media-left">
-                                    <img src="http://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-sm" alt="Profile Picture">
+                                    <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
                                 </div>
                                 <div class="media-body pad-hor">
                                     <div class="speech">
@@ -134,7 +165,7 @@
                             </li>
                             <li class="mar-btm">
                                 <div class="media-left">
-                                    <img src="http://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle img-sm" alt="Profile Picture">
+                                    <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
                                 </div>
                                 <div class="media-body pad-hor">
                                     <div class="speech">
@@ -145,19 +176,18 @@
                                         </p>
                                     </div>
                                 </div>
-                            </li>
+                            </li> */ ?>
                         </ul>
                     </div>
                     <div class="nano-pane"><div class="nano-slider" style="height: 141px; transform: translate(0px, 0px);"></div></div></div>
 
-                <!--Widget footer-->
                 <div class="panel-footer">
                     <div class="row">
                         <div class="col-xs-9">
-                            <input type="text" placeholder="Enter your text" class="form-control chat-input">
+                            <input type="text" placeholder="Digite aqui" id="chatInput" class="form-control chat-input">
                         </div>
                         <div class="col-xs-3">
-                            <button class="btn btn-primary btn-block" type="submit">Send</button>
+                            <input type="button" class="btn btn-primary" value="Enviar" id="btnSend" />
                         </div>
                     </div>
                 </div>
@@ -166,6 +196,12 @@
 
         </div>
     </div>
+    <div class="col-md-3"></div>
 </div>
+
+<script src="js/main.js"></script>
+
+
+
 </body>
 </html>
