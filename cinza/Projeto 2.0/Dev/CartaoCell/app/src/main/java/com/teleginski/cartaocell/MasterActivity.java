@@ -49,6 +49,8 @@ public class MasterActivity extends AppCompatActivity {
         });
 
 
+
+
     }
 
 
@@ -80,7 +82,6 @@ public class MasterActivity extends AppCompatActivity {
 
 
 
-
     private void startScanning() {
         proximityManager.connect(new OnServiceReadyListener() {
             @Override
@@ -89,6 +90,9 @@ public class MasterActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
 
     private IBeaconListener createIBeaconListener() {
         return new SimpleIBeaconListener() {

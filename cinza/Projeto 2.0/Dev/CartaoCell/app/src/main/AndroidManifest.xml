@@ -11,15 +11,15 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.Dark">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.teleginski.cartaocell.MasterActivity"/>
-        <activity android:name="com.teleginski.cartaocell.QRCodeActivity"/>
+        <activity android:name="com.teleginski.cartaocell.MasterActivity" android:theme="@style/AppTheme.Dark"/>
+        <activity android:name="com.teleginski.cartaocell.QRCodeActivity" android:theme="@style/AppTheme.Dark"/>
         <service
             android:name="com.kontakt.sdk.android.ble.service.ProximityService"
             android:exported="false"/>

@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="R$ 20,00"
-        android:background="@color/accent_material_light"
+        android:background="@color/background_material_dark"
         android:id="@+id/txtSlado"
         android:layout_gravity="center_horizontal" />
 
