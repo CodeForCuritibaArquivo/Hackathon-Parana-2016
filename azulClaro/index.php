@@ -17,7 +17,7 @@ session_start();
         <meta http-equiv="content-type" content="text/html">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-COMPATIBLE" content="IE-edge">
-        <meta name="viewport" content="widht=device-width, initial-scale-1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Caps!</title>
 
@@ -29,21 +29,15 @@ session_start();
     </head>
 <body>
 <div class="container">
-    <div class="col-md-12 col-lg-6">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
         <div class="panel">
             <div class="panel-heading">
                 <div class="panel-control">
                     <div class="btn-group">
                         <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#demo-cha-body"><i class="fa fa-chevron-down"></i></button>
                         <button type="button" class="btn btn-default" data-toggle="dropdown"><i class="fa fa-gear"></i></button>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a href="#">Disponivel</a> </li>
-                            <li><a href="#">Disponivel</a> </li>
-                            <li><a href="#">Disponivel</a> </li>
-                            <li class="divider"></li>
-                            <li><a id="demo-connect-chat" href="#" class="disabled-link" data-target="#demo-chat-body">Conectar</a> </li>
-                            <li><a id="demo-disconnect-chat" href="#" data-target="#demo-chat-body">Desconectar</a> </li>
-                        </ul>
+
                     </div>
                 </div>
                 <h3 class="panel-title">Caps</h3>
@@ -160,7 +154,7 @@ session_start();
                             <input type="text" placeholder="Digite aqui" id="chatInput" class="form-control chat-input">
                         </div>
                         <div class="col-xs-3">
-                            <input type="button" class="btn btn-primary btn-block" value="Enviar" id="btnSend" />
+                            <input type="button" class="btn btn-primary" value="Enviar" id="btnSend" />
                         </div>
                     </div>
                 </div>
@@ -169,6 +163,7 @@ session_start();
 
         </div>
     </div>
+    <div class="col-md-3"></div>
 </div>
 
 <script src="js/main.js"></script>
