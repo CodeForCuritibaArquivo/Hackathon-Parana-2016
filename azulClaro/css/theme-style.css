@@ -178,3 +178,10 @@ body{
     -webkit-transition: all .7s;
     transition: all .7s;
 }
+#newMsg {
+    width: 100px;
+    height: 200px;
+    padding: 20px;
+    background-color: #eeeeee;
+    overflow-y: auto;
+}

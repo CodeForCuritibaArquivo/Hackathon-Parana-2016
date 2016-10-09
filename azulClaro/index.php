@@ -45,68 +45,21 @@ session_start();
             <div id="demo-chat-body" class="collapse in">
                 <div class="nano has-scrollbar" style="height:380px">
                     <div class="nano-content pad-all" tabindex="0" style="right: -17px;">
-                        <ul class="list-unstyled media-block">
-                            <li class="mar-btm" id="conv1">
-                                <div class="media-left">
-                                    <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
-                                </div>
-                                <div class="media-body pad-hor">
-                                    <div class="speech">
-                                        <p>Hey! Eu sou a Caps! Tudo bem? :3</p>
-                                    </div>
-                                </div>
-                            </li>
+                        <ul class="list-unstyled media-block" id="newMsg">
 
 
-                            <li class="mar-btm" id="conv2">
-                                <div class="media-left">
-                                    <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
-                                </div>
-                                <div class="media-body pad-hor">
-                                    <div class="speech">
-                                        <p>Eu vou te ajudar a ter internet grátis! ~dancinha da caps~ </p>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="mar-btm" id="conv3">
-                                <div class="media-left">
-                                    <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
-                                </div>
-                                <div class="media-body pad-hor">
-                                    <div class="speech">
-                                        <p>Nossa, já falei demais, posso te fazer uma perguntinha?</p>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="mar-btm" id="conv4">
-                                <div class="media-left">
-                                    <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
-                                </div>
-                                <div class="media-body pad-hor">
-                                    <div class="speech">
-                                        <p>Você deve estar esperando o ônibus, certo? Pra onde cê vai? :3</p>
-                                    </div>
-                                </div>
-                            </li>
+                            <li class="mar-btm">               <div class="media-left">            <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">            </div>            <div class="media-body pad-hor">            <div class="speech">            <p>Boa tarde! Sou caps! Para liberar seu wifi, você pode falar qual é o seu destino?</p>            </div>            </div>            </li>
 
                             <? /*
-
                             <li class="mar-btm">
-                                <div class="media-right">
-                                    <img src="http://bootdey.com/img/Content/avatar/avatar2.png" class="img-circle img-sm" alt="Profile Picture">
-                                </div>
                                 <div class="media-body pad-hor speech-right">
                                     <div class="speech">
-                                        <a href="#" class="media-heading">Rick Astley</a>
                                         <p>Claro!</p>
-                                        <p class="speech-time">
-                                            <i class="fa fa-clock-o fa-fw"></i> 09:23AM
-                                        </p>
                                     </div>
                                 </div>
                             </li>
+
+
                             <li class="mar-btm">
                                 <div class="media-left">
                                     <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">
@@ -199,8 +152,44 @@ session_start();
     <div class="col-md-3"></div>
 </div>
 
-<script src="js/main.js"></script>
+<script src="js/jquery.min.js"></script>
 
+<script>
+    $("#btnSend").click(function(){
+        var clientmsg = $("#chatInput").val();
+        var addMsgMe = '<li class="mar-btm"><div class="media-body pad-hor speech-right"><div class="speech"><p>' + clientmsg + '</p></div></div></li>';
+        $('#newMsg').append(addMsgMe);
+        $.post("refresh.php", {text: clientmsg}, function(data, response, bla){
+
+            var addmsg = '<li class="mar-btm">               <div class="media-left">            <img src="img/avatarCaps.png" class="img-circle img-sm" alt="Profile Picture">            </div>            <div class="media-body pad-hor">            <div class="speech">            <p>'+data+'</p>            </div>            </div>            </li>';
+            //var addmsg = '<li class="me dark-gray massage"><div class="content"><span class="type-text">' + msg + '</span></div><div class="in-border"></div><div class="l-arrow"></div><div class="status failed" style="display:block;"><span class="status-text">Sending Failed</span></div></li>';
+            $('#newMsg').append(addmsg);
+
+            $('ul').animate({
+                    scrollTop: $("#newMsg").last().offset().top
+                },
+                'slow');
+            //$('#newMsg').animate({scrollTop: $('#newMsg').prop("scrollHeight")}, 500);
+
+
+        }).fail(function(response, fail, data){
+            console.log(response);
+            console.log(fail);
+            console.log(data);
+        }).done(function(teste){
+
+        });
+        $("#chatInput").val("");
+
+
+
+
+
+
+
+        return false;
+    });
+</script>
 
 
 </body>
