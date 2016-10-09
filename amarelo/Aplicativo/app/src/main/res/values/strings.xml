@@ -4,4 +4,7 @@
     <string name="mensagem_gravar_audio_nao_suportado">Audio não suportado...</string>
     <string name="pesquisar_obra">Pesquisar Obra</string>
     <string name="pesquisar">Pesquisar</string>
+    <string name="loginLabel">Nome</string>
+    <string name="passwdLabel">Senha</string>
+    <string name="lblEntrar">Entrar</string>
 </resources>
