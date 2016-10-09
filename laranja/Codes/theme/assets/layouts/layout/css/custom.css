@@ -1,0 +1,53 @@
+/* here you can put your own css to customize and override the theme */
+.page-header.navbar .page-logo .logo-default {
+	margin-top: 9px !important;
+}
+
+.page-footer {
+	background:#cfcfcf;
+	height: 100px;
+	width:100%;
+}
+
+.page-footer .page-footer-inner {
+	width:100%;
+	margin-top: 10px;
+	text-align:center;
+}
+
+body > div.page-wrapper > div.page-footer.container-fluid > div.page-footer-inner img {
+	height:82px;
+}
+
+.title-campanhas {
+	color:#404040;
+	text-indent:5%;
+}
+
+.itens-campanhas  {
+	margin-bottom:5px;
+}
+
+.botao-campanhas {
+	width:100%;
+}
+
+body > div.page-wrapper > div.page-header.navbar.navbar-fixed-top {
+	height:100px;
+}
+
+body > div.page-wrapper > div.page-header.navbar.navbar-fixed-top img {
+	height:82px;
+}
+
+body > div.page-wrapper > div.page-header.navbar.navbar-fixed-top > div > div.page-logo > div { 
+	display:none;
+}
+
+body > div.page-wrapper > div.page-header.navbar.navbar-fixed-top > div > div.top-menu > ul > li {
+	height:100px;
+}
+
+body > div.page-wrapper > div.page-header.navbar.navbar-fixed-top > div > div.top-menu > ul > li:first-child {
+	margin-top:20px;
+}
